@@ -1,11 +1,37 @@
-<h1>List of cocktails</h1>
-<ol>
-<% @cocktails.each do |cocktail| %>
-  <li>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-  </li>
-<% end %>
-</ol>
+<div class="banner" style="background-image: url(<%= image_path 'background_cocktail.jpeg' %>);">
+  <div class="banner-content">
+    <h1>Cocktail book</h1>
+    <p>Best cocktails ever</p>
+    <a class="btn btn-danger btn-lg">TRY IT</a>
+  </div>
+</div>
 
-<%= link_to "Create a new cocktail", new_cocktail_path %>
+<div class="wrapper" id="content-wrapper">
+  <div class="container">
+
+    <div class="row">
+      <div class="text-center">
+        <h1>List of cocktails</h1>
+      </div>
+    </div>
+
+    <div class="row padded">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: url('https://source.unsplash.com/random');">
+            <%= link_to cocktail.name, cocktail_path(cocktail), {class: "card-category"}%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+  </div>
+
+  <div class="row text-center padded">
+    <div class="col-xs-12">
+      <%= link_to "Create a new cocktail", new_cocktail_path, {class: "btn btn-danger"} %>
+    </div>
+  </div>
+</div>
 
