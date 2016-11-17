@@ -12,8 +12,14 @@ require "open-uri"
 # Ingredient.create(name: "mint leaves")
 
 list = JSON.parse(open("http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
-ingredients = list ["drinks"]
+ingredients = []
+list["drinks"].each do |couple|
+  word = couple["strIngredient1"].capitalize
+  ingredients << word
+end
 
-ingredients.each do |couple|
-  Ingredient.create(name: couple["strIngredient1"])
+ingredients.sort!
+
+ingredients.each do |ingredient|
+  Ingredient.create(name: ingredient)
 end
