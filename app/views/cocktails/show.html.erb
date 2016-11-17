@@ -1,24 +1,42 @@
-<h1>Cocktail's details</h1>
-<ul>
-  <li>
-    <h2><%= @cocktail.name %></h2>
-      <% @cocktail.doses.each do |dose| %>
-        <p><%= dose.ingredient.name %> :
-          <%= dose.description %>
-          <%= link_to "Delete this dose", cocktail_dose_path(@cocktail, dose), method: :delete %>
-        </p>
-      <% end %>
+<div class="container">
+  <br>
+  <div class="row">< <%= link_to "Back to index", cocktails_path %></div>
+  <div class="row text-center">
+    <h1>Cocktail's details</h1>
+  </div>
 
-    <%#= link_to "Add a dose to this cocktail", new_cocktail_dose_path(@cocktail) %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="row">
+        <div id="cocktail_picture" style="background-image: url('https://source.unsplash.com/random');">
+          <h2><%= @cocktail.name %></h2>
+        </div>
+      </div>
+      <div class="row">
 
-    <h3>Add a dose to this cocktail</h3>
+            <% @cocktail.doses.each do |dose| %>
+              <p><%= dose.ingredient.name %> :
+                <%= dose.description %>
+                <%= link_to "Delete this dose", cocktail_dose_path(@cocktail, dose), method: :delete %>
+              </p>
+            <% end %>
+        </div>
+      </div>
+    </div>
 
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :ingredient_id, collection: @ingredients %>
-      <%= f.input :description %>
-      <%= f.submit "Add a dose", class: "btn btn-primary" %>
-    <% end %>
-  </li>
-</ul>
+    <div class="col-xs-12 col-sm-6">
+      <div class="form_wrapper" id="dose_form_wrapper">
+            <h3>Add a dose to this cocktail</h3>
 
-<%= link_to "Back to index", cocktails_path %>
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+              <%= f.input :ingredient_id, collection: @ingredients %>
+              <%= f.input :description %>
+              <%= f.submit "Add a dose", class: "btn btn-primary" %>
+            <% end %>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

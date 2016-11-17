@@ -1,9 +1,21 @@
+#card-container {
+  background-color: #F1F1F1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px 10px;
+}
+
 .card {
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0.8;
 }
 .card-user {
   position: absolute;
@@ -11,16 +23,21 @@
   top: 10px;
 }
 .card-category {
-  position: absolute;
-  top: 20px;
-  left: 20px;
   font-size: 30px;
   text-transform: uppercase;
+  flex: 0 0 auto;
+  opacity: 1;
 }
+
+.card-category a {
+  color: #D65851;
+}
+
 .card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
+  color: #D65851
 }
 .card-description h2 {
   font-size: 24px;
