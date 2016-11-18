@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

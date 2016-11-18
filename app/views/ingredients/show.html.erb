@@ -1,0 +1,15 @@
+<div class="container padded">
+  <div class="row">
+    <%= link_to "< Back to list of ingredients", ingredients_path %>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1>Cocktails with <%= @ingredient.name %></h1>
+      <ul>
+        <% @cocktails.each do |cocktail| %>
+          <li><%= cocktail.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

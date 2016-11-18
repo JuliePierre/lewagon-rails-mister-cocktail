@@ -15,6 +15,7 @@
       </button>
     </form>
 
+
     <!-- Notification -->
     <%#= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
       <!-- <div class="badge-container">
@@ -36,6 +37,11 @@
           <li>
             <%= link_to cocktails_path do %>
               <i class="fa fa-glass"></i> <%= t(".cocktails", default: "Tous les cocktails") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to ingredients_path do %>
+              <i class="fa fa-apple"></i> <%= t(".ingredients", default: "Recherche par ingrédient") %>
             <% end %>
           </li>
         </ul>

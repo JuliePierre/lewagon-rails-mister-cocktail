@@ -1,0 +1,24 @@
+<div class="wrapper" id="content-wrapper">
+  <div class="container">
+
+    <div class="row">
+      <div class="text-center padded">
+        <h1>List of ingredients</h1>
+      </div>
+    </div>
+
+    <div id="card-container">
+      <div class="row">
+        <% @ingredients.each do |ingredient| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: url('https://source.unsplash.com/random');">
+              <%= link_to ingredient.name, ingredient_path(ingredient), {class: "card-category"} %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+  </div>
+</div>
