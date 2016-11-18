@@ -35,6 +35,7 @@ gem 'autoprefixer-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'figaro'
+gem 'cloudinary', '1.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

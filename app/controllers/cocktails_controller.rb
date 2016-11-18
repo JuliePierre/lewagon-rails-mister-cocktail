@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     if params[:search]
-      @cocktails = Cocktail.where("name LIKE ?", params[:search])
+      @cocktails = Cocktail.joins(:ingredients).where(ingredients: {name: params[:search]})
     else
       @cocktails = Cocktail.all
    end
